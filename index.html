@@ -11,207 +11,193 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- 悬浮音乐播放器样式 -->
+		<style>
+		  .music-fab {
+		    position: fixed;
+		    top: 24px;
+		    left: 24px;
+		    width: 64px;
+		    height: 64px;
+		    border-radius: 50%;
+		    background: radial-gradient(120% 120% at 30% 20%, #6b8afd 0%, #a6b6ff 60%, #3a4bbf 100%);
+		    box-shadow: 0 10px 30px rgba(107,138,253,.35),
+		                inset 0 2px 8px rgba(255,255,255,.15),
+		                inset 0 -2px 12px rgba(0,0,0,.35);
+		    z-index: 9999;
+		    display: grid;
+		    place-items: center;
+		    cursor: pointer;
+		    transition: transform .18s ease;
+		  }
+		  .music-fab.playing {
+		    animation: spin 4s linear infinite;
+		  }
+		  @keyframes spin { to { transform: rotate(360deg); } }
+		  .music-fab svg {
+		    width: 28px;
+		    height: 28px;
+		    fill: white;
+		  }
+		  .hidden { display: none; }
+		</style>
 	</head>
+
 	<body class="is-preload">
 
 		<!-- Header -->
-			<header id="header">
-				<h1>灵感画廊</h1>
-				<nav>
-					<ul>
-						<li><a href="#intro">介绍</a></li>
-						<li><a href="#one">我的工作</a></li>
-						<li><a href="#two">关于我</a></li>
-						<li><a href="#work">作品展示</a></li>
-						<li><a href="#contact">联系我</a></li>
-					</ul>
-				</nav>
-			</header>
+		<header id="header">
+			<h1>灵感画廊</h1>
+			<nav>
+				<ul>
+					<li><a href="#intro">介绍</a></li>
+					<li><a href="#one">我的工作</a></li>
+					<li><a href="#two">关于我</a></li>
+					<li><a href="#work">作品展示</a></li>
+					<li><a href="#contact">联系我</a></li>
+				</ul>
+			</nav>
+		</header>
 
 		<!-- Intro -->
-			<section id="intro" class="main style1 dark fullscreen">
-				<div class="content">
-					<header>
-						<h2>你好</h2>
-					</header>
-					<p>欢迎来到灵感画廊，这是一个由 <a href="https://html5up.net">HTML5</a> 设计的响应式网站，<br />
-					并在 <a href="https://html5up.net/license">知识共享署名许可</a> 下发布，你可以在这里多了解我。</p>
-					<footer>
-						<a href="#one" class="button style2 down">了解更多</a>
-					</footer>
-				</div>
-			</section>
+		<section id="intro" class="main style1 dark fullscreen">
+			<div class="content">
+				<header><h2>你好</h2></header>
+				<p>欢迎来到灵感画廊，这是一个由 <a href="https://html5up.net">HTML5</a> 设计的响应式网站，<br />
+				并在 <a href="https://html5up.net/license">知识共享署名许可</a> 下发布，你可以在这里多了解我。</p>
+				<footer><a href="#one" class="button style2 down">了解更多</a></footer>
+			</div>
+		</section>
 
 		<!-- One -->
-			<section id="one" class="main style2 right dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>我的工作</h2>
-					</header>
-					<p>目前在一家微型软件外包公司做开发。</p>
-				</div>
-				<a href="#two" class="button style2 down anchored">下一页</a>
-			</section>
+		<section id="one" class="main style2 right dark fullscreen">
+			<div class="content box style2">
+				<header><h2>我的工作</h2></header>
+				<p>目前在一家微型软件外包公司做开发。</p>
+			</div>
+			<a href="#two" class="button style2 down anchored">下一页</a>
+		</section>
 
 		<!-- Two -->
-			<section id="two" class="main style2 left dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>关于自己</h2>
-					</header>
-					<p>我过去是，现在仍然是一个探索者</p>
-                    <p>但我不再占星问道，我开始倾听自己内心深处的低语。</p>
-				</div>
-				<a href="#work" class="button style2 down anchored">下一页</a>
-			</section>
+		<section id="two" class="main style2 left dark fullscreen">
+			<div class="content box style2">
+				<header><h2>关于自己</h2></header>
+				<p>我过去是，现在仍然是一个探索者</p>
+				<p>但我不再占星问道，我开始倾听自己内心深处的低语。</p>
+			</div>
+			<a href="#work" class="button style2 down anchored">下一页</a>
+		</section>
 
 		<!-- Work -->
-			<section id="work" class="main style3 primary">
-              <div class="content">
-                <header>
-                  <h2>作品展示</h2>
-                  <p>Bilibili 视频</p>
-                </header>
-
-                <!-- Gallery -->
-                <div class="gallery">
-                  <article class="from-left">
-                    <div style="
-                      position: relative;
-                      width: 100%;
-                      padding-top: 56.25%; /* 16:9 比例 */
-                      overflow: hidden;
-                      border-radius: 12px;
-                      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-                    ">
-                      <iframe src="https://player.bilibili.com/player.html?bvid=BV1AfPeeKE3x&autoplay=0"
-                        style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          width: 100%;
-                          height: 100%;
-                          border: none;
-                          border-radius: 12px;
-                        "
-                        allowfullscreen>
-                      </iframe>
-                    </div>
-                    </a>
-                  </article>
-                  <article class="from-right">
-                    <div style="
-                      position: relative;
-                      width: 100%;
-                      padding-top: 56.25%; /* 16:9 比例 */
-                      overflow: hidden;
-                      border-radius: 12px;
-                      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-                    ">
-                      <iframe src="https://player.bilibili.com/player.html?bvid=BV1qm4y1N7i2&autoplay=0"
-                        style="
-                          position: absolute;
-                          top: 0;
-                          left: 0;
-                          width: 100%;
-                          height: 100%;
-                          border: none;
-                          border-radius: 12px;
-                        "
-                        allowfullscreen>
-                      </iframe>
-                    </div>
-                  </article>
-                  <article class="from-left">
-                    <a href="https://www.bilibili.com/video/BV1WNWTziEiT/" target="_blank" class="image fit">
-                      <img src="images/thumbs/03.jpg" title="Bilibili 视频 3" alt="" />
-                    </a>
-                  </article>
-                  <article class="from-right">
-                    <a href="https://www.bilibili.com/video/BV1WNWTziEiT/" target="_blank" class="image fit">
-                      <img src="images/thumbs/04.jpg" title="Bilibili 视频 4" alt="" />
-                    </a>
-                  </article>
-                  <article class="from-left">
-                    <a href="https://www.bilibili.com/video/BV1WNWTziEiT/" target="_blank" class="image fit">
-                      <img src="images/thumbs/05.jpg" title="Bilibili 视频 5" alt="" />
-                    </a>
-                  </article>
-                  <article class="from-right">
-                    <a href="https://www.bilibili.com/video/BV1WNWTziEiT/" target="_blank" class="image fit">
-                      <img src="images/thumbs/06.jpg" title="Bilibili 视频 6" alt="" />
-                    </a>
-                  </article>
-                </div>
-				  
-              </div>
-            </section>
-
+		<section id="work" class="main style3 primary">
+			<div class="content">
+				<header>
+					<h2>作品展示</h2>
+					<p>Bilibili 视频</p>
+				</header>
+				<div class="gallery">
+					<article class="from-left">
+						<div style="position: relative;width: 100%;padding-top: 56.25%;overflow: hidden;border-radius: 12px;box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+							<iframe src="https://player.bilibili.com/player.html?bvid=BV1AfPeeKE3x&autoplay=0"
+								style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: none;border-radius: 12px;"
+								allowfullscreen></iframe>
+						</div>
+					</article>
+					<article class="from-right">
+						<div style="position: relative;width: 100%;padding-top: 56.25%;overflow: hidden;border-radius: 12px;box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+							<iframe src="https://player.bilibili.com/player.html?bvid=BV1qm4y1N7i2&autoplay=0"
+								style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: none;border-radius: 12px;"
+								allowfullscreen></iframe>
+						</div>
+					</article>
+					<article class="from-left">
+						<a href="https://www.bilibili.com/video/BV1WNWTziEiT/" target="_blank" class="image fit">
+							<img src="images/thumbs/03.jpg" title="Bilibili 视频 3" alt="" />
+						</a>
+					</article>
+					<article class="from-right">
+						<a href="https://www.bilibili.com/video/BV1WNWTziEiT/" target="_blank" class="image fit">
+							<img src="images/thumbs/04.jpg" title="Bilibili 视频 4" alt="" />
+						</a>
+					</article>
+				</div>
+			</div>
+		</section>
 
 		<!-- Contact -->
-			<section id="contact" class="main style3 secondary">
-			  <div class="content">
-			    <header>
-			      <h2>触碰</h2>
-			      <p>如果你有问题或合作意向，请填写下方表单联系我。</p>
-			    </header>
-			    <div class="box">
-			      <form method="POST" action="https://formspree.io/f/xdkwvwza">
-			        <div class="fields">
-			          <div class="field half">
-			            <input type="text" name="name" placeholder="姓名" required />
-			          </div>
-			          <div class="field half">
-			            <input type="email" name="email" placeholder="邮箱" required />
-			          </div>
-			          <div class="field">
-			            <textarea name="message" placeholder="留言" rows="6" required></textarea>
-			          </div>
-			        </div>
-			        <ul class="actions special">
-			          <li><input type="submit" value="发送信息" /></li>
-			        </ul>
-			      </form>
-			    </div>
-			  </div>
-			</section>
-
+		<section id="contact" class="main style3 secondary">
+			<div class="content">
+				<header>
+					<h2>触碰</h2>
+					<p>如果你有问题或合作意向，请填写下方表单联系我。</p>
+				</header>
+				<div class="box">
+					<form method="POST" action="https://formspree.io/f/xdkwvwza">
+						<div class="fields">
+							<div class="field half"><input type="text" name="name" placeholder="姓名" required /></div>
+							<div class="field half"><input type="email" name="email" placeholder="邮箱" required /></div>
+							<div class="field"><textarea name="message" placeholder="留言" rows="6" required></textarea></div>
+						</div>
+						<ul class="actions special"><li><input type="submit" value="发送信息" /></li></ul>
+					</form>
+				</div>
+			</div>
+		</section>
 
 		<!-- Footer -->
-			<footer id="footer">
-
-				<!-- Icons -->
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-					</ul>
-
-				<!-- Menu -->
-					<ul class="menu">
-						<li>&copy; 灵感画廊</li><li>设计: <a href="https://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-			</footer>
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+			</ul>
+			<ul class="menu">
+				<li>&copy; 灵感画廊</li><li>设计: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
+		<!-- 左侧悬浮音乐播放器 -->
+		<button class="music-fab" id="musicFab" title="播放/暂停">
+			<svg id="iconPlay" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+			<svg id="iconPause" class="hidden" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"></path></svg>
+		</button>
+
+		<audio id="player" preload="auto">
+			<source src="music.mp3" type="audio/mpeg">
+			您的浏览器不支持音频播放。
+		</audio>
+
+		<script>
+			const fab = document.getElementById('musicFab');
+			const player = document.getElementById('player');
+			const playIcon = document.getElementById('iconPlay');
+			const pauseIcon = document.getElementById('iconPause');
+
+			fab.addEventListener('click', async () => {
+			  if (player.paused) {
+			    await player.play();
+			    fab.classList.add('playing');
+			    playIcon.classList.add('hidden');
+			    pauseIcon.classList.remove('hidden');
+			  } else {
+			    player.pause();
+			    fab.classList.remove('playing');
+			    playIcon.classList.remove('hidden');
+			    pauseIcon.classList.add('hidden');
+			  }
+			});
+		</script>
 	</body>
 </html>
-
-
-
-
-
-
