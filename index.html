@@ -174,7 +174,7 @@
 			<svg id="iconPause" class="hidden" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"></path></svg>
 		</button>
 
-		<audio id="player" preload="auto">
+		<audio id="player" preload="auto" autoplay>
 			<source src="assets/music/bgm.mp3" type="audio/mpeg">
 			您的浏览器不支持音频播放。
 		</audio>
@@ -197,20 +197,12 @@
 			    playIcon.classList.remove('hidden');
 			    pauseIcon.classList.add('hidden');
 			  }
-			window.addEventListener('DOMContentLoaded', async () => {
-			  try {
-			    await player.play();
-			    fab.classList.add('playing');
-			    playIcon.classList.add('hidden');
-			    pauseIcon.classList.remove('hidden');
-			  } catch (err) {
-			    console.log('浏览器阻止了自动播放：', err);
-			  }
 			});
 
 		</script>
 	</body>
 </html>
+
 
 
 
