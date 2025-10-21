@@ -45,9 +45,8 @@
 		}
 		
 		@keyframes spin {
-		  to {
-		    transform: rotate(360deg);
-		  }
+		  to { transform: rotate(360deg); }
+		}
 
 		</style>
 	</head>
@@ -188,9 +187,6 @@
 		<script>
 			const fab = document.getElementById('musicFab');
 			const player = document.getElementById('player');
-			const playIcon = document.getElementById('iconPlay');
-			const pauseIcon = document.getElementById('iconPause');
-
 			fab.addEventListener('click', async () => {
 			  if (player.paused) {
 			    await player.play();
@@ -208,6 +204,7 @@
 		</script>
 	</body>
 </html>
+
 
 
 
