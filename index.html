@@ -15,32 +15,36 @@
 		<!-- 悬浮音乐播放器样式 -->
 		<style>
 		  .music-fab {
-		    position: fixed;
-		    top: 72px;
-		    left: 24px;
-		    width: 64px;
-		    height: 64px;
-		    border-radius: 50%;
-		    background: radial-gradient(120% 120% at 30% 20%, #6b8afd 0%, #a6b6ff 60%, #3a4bbf 100%);
-		    box-shadow: 0 10px 30px rgba(107,138,253,.35),
-		                inset 0 2px 8px rgba(255,255,255,.15),
-		                inset 0 -2px 12px rgba(0,0,0,.35);
-		    z-index: 9999;
-		    display: grid;
-		    place-items: center;
-		    cursor: pointer;
-		    transition: transform .18s ease;
-		  }
-		  .music-fab.playing {
-		    animation: spin 4s linear infinite;
-		  }
-		  @keyframes spin { to { transform: rotate(360deg); } }
-		  .music-fab svg {
-		    width: 28px;
-		    height: 28px;
-		    fill: white;
-		  }
-		  .hidden { display: none; }
+		  position: fixed;
+		  top: 24px;
+		  left: 24px;
+		  width: 80px;
+		  height: 80px;
+		  border-radius: 50%;
+		  overflow: hidden;              /* 让图片圆形裁剪 */
+		  border: 3px solid rgba(255,255,255,0.4);
+		  box-shadow: 0 10px 30px rgba(0,0,0,.3);
+		  z-index: 9999;
+		  cursor: pointer;
+		  background: #000;
+		  transition: transform 0.3s ease;
+		}
+		
+		.music-fab img {
+		  width: 100%;
+		  height: 100%;
+		  object-fit: cover;             /* 图片等比填充 */
+		  display: block;
+		}
+		
+		.music-fab.playing {
+		  animation: spin 5s linear infinite;
+		}
+		
+		@keyframes spin {
+		  to { transform: rotate(360deg); }
+		}
+
 		</style>
 	</head>
 
@@ -170,11 +174,9 @@
 
 		<!-- 左侧悬浮音乐播放器 -->
 		<button class="music-fab" id="musicFab" title="播放/暂停">
-			<svg id="iconPlay" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-			<svg id="iconPause" class="hidden" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"></path></svg>
+		  <img src="images/avatar.jpg" alt="音乐封面" />
 		</button>
-
-		<audio id="player" preload="auto" autoplay>
+		<audio id="player" preload="auto" autoplay muted>
 			<source src="assets/music/bgm.mp3" type="audio/mpeg">
 			您的浏览器不支持音频播放。
 		</audio>
@@ -202,6 +204,7 @@
 		</script>
 	</body>
 </html>
+
 
 
 
